@@ -1,0 +1,38 @@
+<h1>Aareon Angular Test</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="select-wrapper-row">
+    <label>Title</label>
+    <select formControlName="title">
+      <option value="">-- Select an option --</option>
+      <option [ngValue]="item" *ngFor="let item of titleOptions">
+        {{ item.name }}
+      </option>
+    </select>
+  </div>
+  <div class="wrapper-row">
+    <label>First name</label>
+    <input type="text" placeholder="First name" formControlName="firstName" />
+  </div>
+  <div class="wrapper-row">
+    <label>Last name</label>
+    <input
+      type="text"
+      placeholder="Last name"
+      formControlName="lastName"
+      [ngClass]="{ isNotValidInput: invalidLastName() }"
+    />
+  </div>
+  <div class="errorMessage">
+    <span *ngIf="invalidLastName()">* Last Name is required</span>
+    <span *ngIf="form.controls['lastName'].hasError('nonAlphaCharacters')">
+      Text contains invalid characters
+    </span>
+  </div>
+  <div class="wrapper-checkbox">
+    <input type="checkbox" formControlName="acceptForm" />
+    <label>I accept the terms & conditions</label>
+  </div>
+  <div class="wrapper-row">
+    <button [disabled]="!form.value.acceptForm">Submit</button>
+  </div>
+</form>

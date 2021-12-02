@@ -1,0 +1,38 @@
+.wrapper-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5em;
+}
+.select-wrapper-row {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5em;
+}
+.select-wrapper-row > label {
+  padding: 0.5em 1em 0.5em 0;
+  width: 15%;
+}
+.wrapper-row > label {
+  padding: 0.5em 1em 0.5em 0;
+  width: 15%;
+}
+.wrapper-row > input {
+  flex: 2;
+}
+.wrapper-row > select {
+  flex: 2;
+}
+.wrapper-row > input,
+.wrapper-row > button {
+  padding: 0.5em;
+}
+.wrapper-checkbox {
+  padding: 0.5em 0.5em;
+}
+.errorMessage {
+  color: red;
+  font-size: 0.8em;
+}
+.isNotValidInput {
+  border: 2px solid red;
+}
